@@ -112,14 +112,14 @@ def fold_run():
 			#time.sleep(1)
 			
 			#print(main_menu.MENU_CHOICE)
-			confadd_dir = "\n>> items added to folder %s" % add_Dir
-			confsub_dir = "\n>> items removed from folder %s" % sub_Dir
+			confadd_dir = ">>items added to folder::%s" % add_Dir
+			confsub_dir = ">>items removed from folder::%s" % sub_Dir
 
 			logger = confadd_dir, confsub_dir
 
 			if main_menu.MENU_CHOICE=="1":
 				with open(log_alert.dst_folder, "a") as file:
-					file.write(f"\n\n::[{d1}]::[{cur_time}]{confadd_dir}{confsub_dir}")
+					file.write(f"\n::[{d1}]::[{cur_time}]{confadd_dir}{confsub_dir}")
 
 			if main_menu.MENU_CHOICE=="2":				
 				print("--------------------------------------------------------------------------",'\n'
