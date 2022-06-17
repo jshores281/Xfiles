@@ -5,8 +5,7 @@ Windows/Linux  Directory Monitoring System with automated email notifications
 # version 4																
 ###############################################################################
 # monitors files and top level folders in a user specified directory 	
-# if any files or folders are added or deleted from the directory, 		
-# a email to sms alert system will trigger of what items in directory changed		
+if any files or folders are added or deleted from the directory, a email to sms alert system will trigger of what items in directory changed		
 ###############################################################################
 # secured with tls
 ###############################################################################
