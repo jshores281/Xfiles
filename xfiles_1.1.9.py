@@ -1,11 +1,9 @@
 #!/bin/python3
-
 import os, sys, time, smtplib
 import datetime
 from datetime import date
 from shutil import copy2
-
-
+import getpass
 
 ct = datetime.datetime.now()
 cur_time = ct.strftime("%H:%M:%S")
@@ -51,16 +49,19 @@ def fold_mon(src_folder):
 			time.sleep(1)
 		cntr += 1
 
-
-
-
-
-
-
-
 # CONFIRMATION loop
 def fold_run():							
 	for bytesize, cntr, static_dir, live_dir, new_Dir, add_Dir, sub_Dir, lDircount, sDircount, dDircount in credz.fmon:
+		print("""
+
+ --------------------------------------------------------------------------
+   ___ ___  ___  ____  ____ ______  ___  ____  ____ ____   ____ 
+  |   |   |/   \|    \|    |      |/   \|    \|    |    \ /    |
+  | _   _ |     |  _  ||  ||      |     |  D  )|  ||  _  |   __|
+  |  \_/  |  O  |  |  ||  ||_|  |_|  O  |    / |  ||  |  |  |  |
+  |   |   |     |  |  ||  |  |  | |     |    \ |  ||  |  |  |_ |
+  |   |   |     |  |  ||  |  |  | |     |  .  \|  ||  |  |     |
+  |___|___|\___/|__|__|____| |__|  \___/|__|\_|____|__|__|___,_|""")
 		print('\n'
 			,'--------------------------------------------------------------------------', '\n'
 			,'--------------------------------------------------------------------------', '\n'
@@ -126,11 +127,20 @@ def event_log():
 
 
 def credz():
-	EMAIL_SENDER = input("EMAIL: ")
-	EMAIL_PASSWORD = input("PASSWORD: ")
-	EMAIL_SRVR = input("SMTP SERVER: ")
-	EMAIL_PORT = input("SMTP SERVER PORT: ")
-	RECV_PHONE = input("CELL PHONE: ")
+	print("""
+Enter an email address that has an APP Password enabled.""")
+	EMAIL_SENDER = input("EMAIL ADDRESS: ")
+	print("""
+Enter the APP Password here.""")
+	EMAIL_PASSWORD = getpass.getpass(prompt="EMAIL APP PASSWORD: ", stream=None)
+	pass_len = ("#"*len(EMAIL_PASSWORD))
+	EMAIL_SRVR = "smtp.gmail.com"
+	EMAIL_PORT = 587
+	print("""
+Enter the receiving address where alerts will be sent to.""")
+	RECV_PHONE = input("Receiver address (email/cell number: ")
+	print("""
+keep this blank if email. Enter cell carrier sms-gateway starting with @""")
 	SMS_GATE = input("CARRIER SMS-GATEWAY: ")
 
 	credz.EMAIL_ADDR = EMAIL_SENDER
@@ -139,9 +149,11 @@ def credz():
 	credz.EMAIL_PORT = EMAIL_PORT
 	credz.RECV_ADDR = RECV_PHONE + SMS_GATE
 
+
+
 	print("\n",
 		"EMAIL = %s" % credz.EMAIL_ADDR,"\n",
-		"PASSWORD = %s" % credz.EMAIL_PASS,"\n",
+		"PASSWORD = %s" % pass_len,"\n",
 		"SERVER = %s" % credz.EMAIL_SRVR,"\n",
 		"PORT = %s" % credz.EMAIL_PORT,"\n",
 		"PHONE & SMS-GATEWAY = %s" % credz.RECV_ADDR,"\n")
@@ -161,8 +173,6 @@ def credz():
 		
 
 def log_alert():
-
-
 	credz.src_folder = input("copy folder path here: ")
 	log_file = input("log file name: ")
 	log_alert.dst_folder = os.path.join(os.getcwd(), log_file)
@@ -214,7 +224,21 @@ def main_menu():
 	while True:
 		print("""
 -----------------------------------------
------  OS FOLDER MONITORING SYSTEM  -----
+-----OS DIRECTORY MONITORING SYSTEM------
+-----------------------------------------
+ __   ________ _____ _      ______  _____        
+ \ \ / |  ____|_   _| |    |  ____|/ ____|       
+  \ V /| |__    | | | |    | |__  | (___         
+   > < |  __|   | | | |    |  __|  \___ \        
+  / . \| |     _| |_| |____| |____ ____) |       
+ /_/ \_|_|    |_____|______|______|_____/        
+  __  __  ____  _   _ _____ _______ ____  _____  
+ |  \/  |/ __ \| \ | |_   _|__   __/ __ \|  __ \ 
+ | \  / | |  | |  \| | | |    | | | |  | | |__) |
+ | |\/| | |  | | . ` | | |    | | | |  | |  _  / 
+ | |  | | |__| | |\  |_| |_   | | | |__| | | \ \ 
+ |_|  |_|\____/|_| \_|_____|  |_|  \____/|_|  \_\
+
 -----------------------------------------
 ----------- ALERT OPTIONS ---------------
 -----------------------------------------
@@ -222,9 +246,10 @@ def main_menu():
 [1] - FILE LOGGING = Logs changes of a directory to a log.txt file
 
 [2] - EMAIL/SMS-GATEWAY ALERTS = Send message when folder changes contents.
-		""")
 
-		main_menu.MENU_CHOICE = input("Choose an options: ")
+-----------------------------------------""")
+
+		main_menu.MENU_CHOICE = input("Type a number: ")
 		if main_menu.MENU_CHOICE=="1":
 			log_alert()
 		if main_menu.MENU_CHOICE=="2":
