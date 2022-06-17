@@ -1,9 +1,8 @@
 #!/bin/python3
-import os, sys, time, smtplib
-import datetime
+import os, sys, time, smtplib, datetime, getpass
 from datetime import date
 from shutil import copy2
-import getpass
+
 
 ct = datetime.datetime.now()
 cur_time = ct.strftime("%H:%M:%S")
