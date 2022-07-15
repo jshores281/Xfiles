@@ -3,7 +3,7 @@
 ## WHAT THIS IS:
 ### A Windows/Linux Directory Monitoring Program with either local file logging or automated email alerts based on all directory changes.
 ------------------------
-## ABOUT THIS THING:
+## ABOUT:
 ### - Monitors files and top level folders in a user specified directory if any files or folders are added or deleted from the directory, a email to sms alert system will trigger of what items in directory changed
 ### - secured with tls
 ## Requires: Python 3+, google app password 
