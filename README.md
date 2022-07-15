@@ -1,12 +1,12 @@
 # Xfiles: v1.2
-# 
-## WHAT THIS IS:
-### A Windows/Linux Directory Monitoring Program with either local file logging or automated email alerts based on all directory changes.
+### A python Directory Monitoring script. Supports local file logging or automated email alerts.
 ------------------------
-## ABOUT:
-### - Monitors files and top level folders in a user specified directory if any files or folders are added or deleted from the directory, a email to sms alert system will trigger of what items in directory changed
-### - secured with tls
-## Requires: Python 3+, google app password 
+## About:
+### - Monitors files and top level directory user specified. 
+### - Email to SMS-Gateway alert system will trigger if items in a directory change.
+#
+## Requires: 
+### - Python 3+, google app password 
 -----------------------------------
 ![xfiles_monitor](https://user-images.githubusercontent.com/52839097/174408130-3a573146-dd49-4fb9-813d-c7bf1facca3a.PNG)
 -----------------------------------
