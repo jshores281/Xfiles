@@ -12,8 +12,6 @@
 -----------------------------------
 ![xfiles_monitoring](https://user-images.githubusercontent.com/52839097/174408838-66ed34ff-84ae-4cdd-a5ad-1706e5dcf6b2.PNG)
 -----------------------------------
-![xfiles_mon_update](https://user-images.githubusercontent.com/52839097/174408856-cc11f86b-e53c-46cf-b0db-0e8c5d403cf2.PNG)
------------------------------------
 # FEATURES TO ADD 	
 
 ### - add functions as members to a single class?
