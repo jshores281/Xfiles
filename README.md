@@ -17,5 +17,6 @@
 ### - add functions as members to a single class?
 ### - copy new and removed files and folders in srcfolder to dstfolder !!!!!!
 ### - package into a GUI
+### - scan all files and subdirectories for total filesystem monitoring
 ------------------------------------
 ------------------------------------
