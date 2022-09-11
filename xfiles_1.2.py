@@ -137,17 +137,15 @@ Enter the APP Password here.""")
 	EMAIL_SRVR = "smtp.gmail.com"
 	EMAIL_PORT = 587
 	print("""
-Enter the receiving address where alerts will be sent to.""")
-	RECV_PHONE = input("Receiver address (email/cell number: ")
-	print("""
-keep this blank if email. Enter cell carrier sms-gateway starting with @""")
-	SMS_GATE = input("CARRIER SMS-GATEWAY: ")
+Enter the receiving address where alerts will be sent to.
+***EMAIIL = full email address /TXT = full cell # with sms-gateway***\n""")
+	RECV_PHONE = input("Receiving address: ")
 
 	credz.EMAIL_ADDR = EMAIL_SENDER
 	credz.EMAIL_PASS = EMAIL_PASSWORD
 	credz.EMAIL_SRVR = EMAIL_SRVR
 	credz.EMAIL_PORT = EMAIL_PORT
-	credz.RECV_ADDR = RECV_PHONE + SMS_GATE
+	credz.RECV_ADDR = RECV_PHONE
 
 
 
@@ -156,7 +154,7 @@ keep this blank if email. Enter cell carrier sms-gateway starting with @""")
 		"PASSWORD = %s" % pass_len,"\n",
 		"SERVER = %s" % credz.EMAIL_SRVR,"\n",
 		"PORT = %s" % credz.EMAIL_PORT,"\n",
-		"PHONE & SMS-GATEWAY = %s" % credz.RECV_ADDR,"\n")
+		"EMAIL OR PHONE@SMS.GATEWAY = %s" % credz.RECV_ADDR,"\n")
 	cred_correct = input("INFO CORRECT: [Y] / [N] > ")
 	cred_correct = cred_correct.upper()
 	if cred_correct == "N":
