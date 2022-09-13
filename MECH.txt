@@ -1,0 +1,65 @@
+---------------------------------------------------------------------------
+PROBLEM: need to be able to test infinit generator loop for accepting new 
+	data alterations as a real-time data stream
+---------------------------------------------------------------------------
+PROG: folder monitoring; copies any new files or folders saved to a 
+	directory of your choice
+---------------------------------------------------------------------------
+MECH-1: ~ outline arch
+: make infinit memory safe generator loop that monitors folder contents for 
+	new/deleted files
+: conditional; if folder new contents > current contents: print 
+	comfirmation & copy new files to desktop; else: keep monitoring
+
+: test by coping file from monitored folder to desktop
+
+
+
+
+---------------------------------------------------------------------------
+MECH-2: ~ limiting list A by popping and appending to new list B
+: files in folder is list A[1,2,3]
+: new files added to folder become list B[]
+
+: while loop: A[1,2,3,NEW!] ->> 
+for listA[1,2,3,NEW!] POP(listA[1,2,3,-NEW!(3=MAX)] THEN APPEND(listB[NEW!])
+
+before: A[1,2,3,NEW!] , B[]
+after: A[1,2,3], B[NEW!]
+
+for items in listB:
+	copy to folder path
+	break
+
+: listb.append(lista.pop())
+: 
+
+
+---------------------------------------------------------------------------
+MECH-3: ~ complete file system scan and monitoring changes
+: multi stage process
+
+1. decide if just single directory or complete file system/drive
+
+2. complete drive: scan all files from top to bottom sub-directories.
+2.1. output scanned drive into json format
+
+3. get hash of drive.
+
+4. re-hash drive over incremental period (sec/minutes/days)
+
+5. if hash changes then re-scan drive.
+5.1. output new drive into json format.
+5.2. compare previous json scan with current json scan
+5.3. output changes to new json file
+5.4. read changes json file to cli app screen
+
+
+
+
+
+
+
+
+
+
