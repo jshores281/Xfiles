@@ -8,7 +8,6 @@
 ## Requires: 
 ### - Python 3+
 ### - gmail app password (email alerts)
-### OR
 ### - SMS-gateway address
 -----------------------------------
 ![xfiles_monitor](https://user-images.githubusercontent.com/52839097/174408130-3a573146-dd49-4fb9-813d-c7bf1facca3a.PNG)
