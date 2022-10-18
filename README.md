@@ -1,5 +1,5 @@
 # Xfiles: v1.2
-### A python Directory Monitoring script. Supports local file logging or automated email alerts.
+### File system Monitoring app. Supports local file logging or automated email alerts.
 ------------------------
 ## About:
 ### - Monitors files and top level directory user specified. 
@@ -8,6 +8,8 @@
 ## Requires: 
 ### - Python 3+
 ### - gmail app password (email alerts)
+### OR
+### - SMS-gateway address
 -----------------------------------
 ![xfiles_monitor](https://user-images.githubusercontent.com/52839097/174408130-3a573146-dd49-4fb9-813d-c7bf1facca3a.PNG)
 -----------------------------------
